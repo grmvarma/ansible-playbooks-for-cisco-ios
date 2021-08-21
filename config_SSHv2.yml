@@ -24,7 +24,7 @@
   - name: SHOW RUN | I SSH
     ios_command:
       provider: "{{ provider }}"
-      timeout: 30
+
       authorize: yes
       commands:
         - show run | i ssh
@@ -35,7 +35,7 @@
   - name: IP SSH VERSION 2
     ios_config:
       provider: "{{ provider }}"
-      timeout: 30
+
       authorize: yes
       lines:
         - ip ssh version 2
@@ -44,7 +44,7 @@
   - name: SHOW RUN | I SSH
     ios_command:
       provider: "{{ provider }}"
-      timeout: 30
+
       authorize: yes
       commands:
         - show run | i ssh
