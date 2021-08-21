@@ -1,7 +1,7 @@
 - hosts: all
 
   gather_facts: no
-  connection: ansible.netcommon.network_cli
+  connection: local
   
   vars:
     ansible_python_interpreter: "/usr/bin/python3"
