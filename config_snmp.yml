@@ -1,8 +1,10 @@
 #Cisco IOS SNMP Playbook
 #Check out my website www.thenetwork.engineer
 
+- hosts: all
+  vars:
+    ansible_python_interpreter: "/usr/bin/python3"
 
-- hosts: ios
   gather_facts: no
   connection: local
 
