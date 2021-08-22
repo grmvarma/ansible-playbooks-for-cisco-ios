@@ -33,6 +33,7 @@
           #- show interface status | i down
       tags: show
       register: show_output
+      
     - name: run show version and check to see if output contains IOS
       ios_command:
           commands: show ip int brief
