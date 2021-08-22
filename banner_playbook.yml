@@ -31,7 +31,7 @@
           - show run | section domain
           - show run | section username
           #- show interface status | i down
-      tags show
+      tags: show
       register: output
     - name: run show version and check to see if output contains IOS
       ios_command:
