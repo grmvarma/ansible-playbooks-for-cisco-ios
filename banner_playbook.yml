@@ -1,7 +1,7 @@
 ---
-- hosts: local
-  gather_facts: no
-  connection: local
+  hosts: all
+  connection: network_cli
+  gather_facts: false
 
   tasks:
   - name: OBTAIN LOGIN CREDENTIALS
