@@ -34,10 +34,10 @@
       #tags: show
       register: output
       
-    - name: run show version and check to see if output contains IOS
-      ios_command:
-          commands: show ip int brief
-          wait_for: result[0] contains IOS
+    #- name: run show version and check to see if output contains IOS
+      #ios_command:
+          #commands: show ip int brief
+          #wait_for: result[0] contains IOS
      
           
     - name: sh run
