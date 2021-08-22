@@ -38,16 +38,16 @@
       ios_command:
           commands: show ip int brief
           wait_for: result[0] contains IOS
-      #register: show_output_2
+     
           
     - name: sh run
       ios_config:
           #commands: show run | i line
-      #register: output
+    
 
     - name: print output
       debug:
         var: output
-        #var: show_output_2
+     
 
  
