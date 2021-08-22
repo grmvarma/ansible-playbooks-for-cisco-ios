@@ -1,5 +1,5 @@
 ---
-- name: TEST
+- name: Audit 
   hosts: all
   connection: network_cli
   gather_facts: false
@@ -17,11 +17,20 @@
         gather_subset: min
         
         
-    - name: run show version on remote devices
+    - name: run audit on remote devices
       ios_command:
           commands:
+          - show run | i hostname
           - show version
           - show interfaces
+          - show run | section ntp
+          - show run | section logging
+          - show run | section vty
+          - show run | section aaa
+          - show run | section snmp
+          - show run | section domain
+          - show run | section username
+          - show interface status | i down
       register: output
     - name: run show version and check to see if output contains IOS
       ios_command:
