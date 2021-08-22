@@ -20,7 +20,7 @@
     - name: run audit on remote devices
       ios_command:
           commands:
-          - show run | i hostname
+          - show run
           - show version
           - show interfaces
           - show run | section ntp
