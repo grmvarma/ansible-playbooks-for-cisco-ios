@@ -19,9 +19,7 @@
         
     - name: run show version on remote devices
       ios_command:
-         commands: 
-         - show version
-         - show  ip interfaces brief
+         commands: show version
 
     - name: run show version and check to see if output contains IOS
       ios_command:
