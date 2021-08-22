@@ -1,6 +1,6 @@
 ---
 - name: TEST
-  hosts: all
+  #hosts: all
   connection: network_cli
   gather_facts: false
   
@@ -19,7 +19,7 @@
         
     - name: run show version on remote devices
       ios_command:
-         commands: show version
+         commands: show ip int brief
 
     - name: run show version and check to see if output contains IOS
       ios_command:
