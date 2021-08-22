@@ -1,5 +1,5 @@
 ---
-- hosts: ios
+- hosts: all
   gather_facts: no
   connection: local
 
@@ -21,6 +21,9 @@
       authorize: yes
       commands:
         - show run | beg banner
+        - show run | i hostname
+        - show  ip interfaces brief
+    tags: show
     register: banner
 
   - debug: var=banner.stdout_lines
@@ -30,7 +33,7 @@
       provider: "{{ provider }}"
       authorize: yes
       lines:
-        - banner motd ^Welcome to the 2 day CCNA boot camp^
+        - banner motd ^Welcome to RAS AUTOMATION^
 
   - name: SHOW RUN | BEG BANNER
     ios_command:
