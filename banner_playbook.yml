@@ -19,7 +19,9 @@
         
     - name: run show version on remote devices
       ios_command:
-         commands: show ip int brief
+          commands:
+          - show version
+          - show interfaces
 
     - name: run show version and check to see if output contains IOS
       ios_command:
@@ -28,6 +30,11 @@
           
     - name: sh run
       ios_config:
-          commands: show run
+          commands: show run | i line
+    register: output
+
+    - name: print output
+      debug:
+        var: output
 
  
