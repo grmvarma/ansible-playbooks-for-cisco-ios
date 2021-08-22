@@ -37,7 +37,7 @@
       ios_command:
           commands: show ip int brief
           wait_for: result[0] contains IOS
-      register: show_output_2
+      #register: show_output_2
           
     - name: sh run
       ios_config:
