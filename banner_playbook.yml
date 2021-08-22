@@ -32,12 +32,12 @@
           - show run | section username
           #- show interface status | i down
       tags: show
-      register: output
+      register: show_output
     - name: run show version and check to see if output contains IOS
       ios_command:
-          commands: show version
+          commands: show ip int brief
           wait_for: result[0] contains IOS
-      register: output
+      register:  show_output_2
           
     - name: sh run
       ios_config:
@@ -46,6 +46,7 @@
 
     - name: print output
       debug:
-        var: output
+        var: show_output
+        var: show_output_2
 
  
