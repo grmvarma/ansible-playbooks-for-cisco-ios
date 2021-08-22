@@ -14,7 +14,7 @@
 
     - name: Accespt ansible net hostname
       ios_facts:
-        gather_subset: all
+        gather_subset: min
         
         
     - name: run show version on remote devices
@@ -22,16 +22,17 @@
           commands:
           - show version
           - show interfaces
-
+      register: output
     - name: run show version and check to see if output contains IOS
       ios_command:
           commands: show version
           wait_for: result[0] contains IOS
+      register: output
           
     - name: sh run
       ios_config:
-          commands: show run | i line
-      register: output
+          #commands: show run | i line
+      #register: output
 
     - name: print output
       debug:
